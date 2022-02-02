@@ -14,7 +14,7 @@ RUN         apk add --no-cache --update libc6-compat ffmpeg g++ make sqlite sqli
 RUN         gem install sinatra slim sqlite3 puma bcrypt 
 
 USER        container
-ENV         USER=container HOME=/home/container
+ENV         USER=container HOME=/home/container RACK_ENV=production
 WORKDIR     /home/container
 
 COPY        ./entrypoint.sh /entrypoint.sh
