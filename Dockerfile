@@ -8,10 +8,10 @@ FROM        ruby:alpine
 
 LABEL       author="Alve" maintainer="alve@hotmail.se"
 
-RUN         apk add --no-cache --update libc6-compat ffmpeg g++ make sqlite sqlite-dev libsass imagemagick-dev \
+RUN         apk add --no-cache --update libc6-compat ffmpeg g++ make sqlite sqlite-dev libsass imagemagick-dev imagemagick imagemagick-static imagemagick-c++ imagemagick-libs \
             && adduser -D -h /home/container container
 
-RUN         gem install sinatra slim sqlite3 puma bcrypt 
+RUN         gem install sinatra slim sqlite3 puma bcrypt rmagick
 
 USER        container
 ENV         USER=container HOME=/home/container RACK_ENV=production
