@@ -8,7 +8,7 @@ FROM        ruby:alpine
 
 LABEL       author="Alve" maintainer="alve@hotmail.se"
 
-RUN         apk add --no-cache --update libc6-compat ffmpeg g++ make sqlite sqlite-dev libsass \
+RUN         apk add --no-cache --update libc6-compat ffmpeg g++ make sqlite sqlite-dev libsass imagemagick-dev \
             && adduser -D -h /home/container container
 
 RUN         gem install sinatra slim sqlite3 puma bcrypt 
