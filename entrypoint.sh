@@ -1,6 +1,7 @@
 #!/bin/ash
 cd /home/container
 
+touch /home/container/.env.local
 source /home/container/.env.local
 
 # Make internal Docker IP address available to processes.
